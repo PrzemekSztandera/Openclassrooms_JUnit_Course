@@ -15,11 +15,14 @@ public class Calculator {
 
     public void slowCalculation() {
         try {
-            Thread.sleep(2000L);
+            final Long sleepTime = 2000L;
+            Thread.sleep(sleepTime);
         } catch (InterruptedException e) {
             System.out.println("This operation completed after 3 seconds");
         }
 
     }
+
+
 
 }
