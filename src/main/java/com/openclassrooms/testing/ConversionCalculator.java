@@ -3,7 +3,7 @@ package com.openclassrooms.testing;
 /**
  * Converts between different type of units.
  */
-public class ConversionCalculator {
+public class ConversionCalculator implements ConversionCalculatorInterface {
 
     // constants for temperature conversion
     private static final double BASE_FAHRENHEIT = 32.0;
@@ -41,7 +41,7 @@ public class ConversionCalculator {
      * @return volume in gallons
      */
 
-    public Double litresToGallon(Double litreVolume) {
+    public Double litresToGallons(Double litreVolume) {
         return Math.ceil(litreVolume * LITRE_TO_GALLON_MULTIPLIER);
     }
 

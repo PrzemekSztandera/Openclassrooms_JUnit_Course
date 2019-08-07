@@ -1,5 +1,6 @@
 package com.openclassrooms.testing;
 
+import org.junit.experimental.categories.Category;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Tag;
@@ -12,8 +13,15 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @Tag("ConversionTest")
 @DisplayName("We should be able to convert between different units.")
+@Category(Categories.ConversionTests.class)
+
+
 public class ConversionCalculatorTest {
+
     private ConversionCalculator calculatorUnderTest = new ConversionCalculator();
+
+
+
 
     @Nested
     @Tag("TemperatureTests")
@@ -35,16 +43,22 @@ public class ConversionCalculatorTest {
         }
     }
 
+
+
+
+
+
+
     @DisplayName("Given a volume in litres when converted to gallons then the result is rounded up")
     @Test
     public void litresToGallons_returnsGallons() {
-        Double actualLitres = calculatorUnderTest.litresToGallon(3.78541);
+        Double actualLitres = calculatorUnderTest.litresToGallons(3.78541);
         assertThat(actualLitres, is(equalTo(1.0)));
     }
 
     @DisplayName("Given a radius of one when converted then the result is PI")
     @Test
-    public void radiusToAreaOfCircle_returnArea() {
+    public void radiusToAreaOfCircle_returnPi_whenWeHaveARadiusOfOne() {
         Double actualArea = calculatorUnderTest.radiusToAreaOfCircle(1.0);
         assertThat(actualArea, is(equalTo(PI)));
     }
